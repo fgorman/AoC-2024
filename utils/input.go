@@ -1,7 +1,7 @@
 package utils
 
 func GetDaysInput(day int) string {
-	in := ""
+	in := "Test"
 
 	return in
 }
