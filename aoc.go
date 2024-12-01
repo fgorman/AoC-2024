@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"flag"
 	"time"
 
+	"aoc/solutions"
 	"aoc/utils"
 )
 
@@ -18,5 +18,5 @@ func main() {
 
 	in := utils.GetDaysInput(*aocDay)
 
-	fmt.Println(in)
+	solutions.RunSolution(day, in)
 }
