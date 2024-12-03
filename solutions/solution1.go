@@ -10,15 +10,17 @@ import (
 
 func solution1(in string) {
 	fmt.Println("Running solution for day 1.")
-	
-	left, right := parseInput(in)
 
-	part1(left, right)
+	left, right := getLeftAndRight(in)
 
-	part2(left, right)
+	totalDistance := getTotalDistance(left, right)
+	fmt.Println("Total distance:", totalDistance)
+
+	similarityScore := getSimilarityScore(left, right)
+	fmt.Println("Similarity score:", similarityScore)
 }
 
-func parseInput(in string) (left, right []int) {
+func getLeftAndRight(in string) (left, right []int) {
 	in = strings.TrimSpace(in)
 	lines := strings.Split(in, "\n")
 	left = make([]int, len(lines))
@@ -44,16 +46,16 @@ func parseInput(in string) (left, right []int) {
 	return
 }
 
-func part1(left, right []int) {
+func getTotalDistance(left, right []int) int {
 	var totalDistance int = 0
 	for idx := 0; idx < len(left); idx++ {
 		totalDistance += int(math.Abs(float64(left[idx] - right[idx])))
 	}
 
-	fmt.Println("Total distance:", totalDistance)
+	return totalDistance
 }
 
-func part2(left, right []int) {
+func getSimilarityScore(left, right []int) int {
 	numMap := make(map[int]int)
 
 	for _, num := range left {
@@ -65,5 +67,5 @@ func part2(left, right []int) {
 		similarityScore += num * numMap[num]
 	}
 
-	fmt.Println("Similarity score:", similarityScore)
+	return similarityScore
 }
