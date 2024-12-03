@@ -18,5 +18,5 @@ func main() {
 
 	in := utils.GetDaysInput(*aocDay)
 
-	solutions.RunSolution(day, in)
+	solutions.RunSolution(*aocDay, in)
 }
