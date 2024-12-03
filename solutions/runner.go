@@ -1,7 +1,5 @@
 package solutions
 
-import "fmt"
-
 func RunSolution(day int, in string) {
 	if day < 1 || day > 25 {
 		panic("Day must be within 1 and 25")
@@ -34,8 +32,6 @@ func RunSolution(day int, in string) {
 		24: solution24,
 		25: solution25,
 	}
-
-	fmt.Println(solutionsMap)
 
 	solutionsMap[day](in)
 }
