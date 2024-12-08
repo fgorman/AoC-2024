@@ -10,8 +10,6 @@ import (
 const TEST = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
 
 func Solution(in string) {
-	fmt.Println("Running solution for day 3.")
-
 	mulSum := getMulSum(in)
 	fmt.Println("Sum of mul operations:", mulSum)
 

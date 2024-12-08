@@ -22,8 +22,6 @@ type Equation struct {
 }
 
 func Solution(in string) {
-	fmt.Println("Running solution for day 7.")
-
 	//in = TEST
 
 	equations := getEquations(in)

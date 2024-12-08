@@ -39,8 +39,6 @@ const TEST = `47|53
 97,13,75,29,47`
 
 func Solution(in string) {
-	fmt.Println("Running solution for day 5.")
-
 	//in = TEST5
 
 	in = strings.TrimSpace(in)

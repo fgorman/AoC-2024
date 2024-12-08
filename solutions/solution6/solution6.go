@@ -27,8 +27,6 @@ type PosDir struct {
 }
 
 func Solution(in string) {
-	fmt.Println("Running solution for day 6.")
-
 	//in = TEST
 
 	in = strings.TrimSpace(in)

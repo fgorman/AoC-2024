@@ -10,8 +10,6 @@ const TEST = "MMMSXXMASM\nMSAMXMSMSA\nAMXSXMAAMM\nMSAMASMSMX\nXMASAMXAMM\nXXAMMX
 const XMAS = "XMAS"
 
 func Solution(in string) {
-	fmt.Println("Running solution for day 4.")
-
 	wordSearch := buildWordSearch(in)
 
 	numXmas := countXmas(wordSearch)

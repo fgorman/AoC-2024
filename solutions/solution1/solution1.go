@@ -9,8 +9,6 @@ import (
 )
 
 func Solution(in string) {
-	fmt.Println("Running solution for day 1.")
-
 	left, right := getLeftAndRight(in)
 
 	totalDistance := getTotalDistance(left, right)

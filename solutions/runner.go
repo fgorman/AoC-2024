@@ -26,6 +26,7 @@ import (
 	"aoc/solutions/solution7"
 	"aoc/solutions/solution8"
 	"aoc/solutions/solution9"
+	"fmt"
 )
 
 func RunSolution(day int, in string) {
@@ -60,6 +61,8 @@ func RunSolution(day int, in string) {
 		24: solution24.Solution,
 		25: solution25.Solution,
 	}
+
+	fmt.Println("Running solution for day", day)
 
 	solutionsMap[day](in)
 }
