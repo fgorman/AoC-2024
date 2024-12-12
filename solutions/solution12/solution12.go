@@ -118,34 +118,18 @@ func getTotalPlot(region [][]string, plotCh string, startRow, startCol int) (are
 	for loc := range area.Locs {
 		row := loc.Row
 		col := loc.Col
-		rowDown := loc.Row - 1
-		colDown := loc.Col - 1
-		rowUp := loc.Row + 1
-		colUp := loc.Col + 1
 
-		if !reachable[Loc{rowDown, col}] && !reachable[Loc{row, colDown}] {
-			area.Sides++
-		}
-		if !reachable[Loc{rowUp, col}] && !reachable[Loc{row, colDown}] {
-			area.Sides++
-		}
-		if !reachable[Loc{rowDown, col}] && !reachable[Loc{row, colUp}] {
-			area.Sides++
-		}
-		if !reachable[Loc{rowUp, col}] && !reachable[Loc{row, colUp}] {
-			area.Sides++
-		}
-		if reachable[Loc{rowDown, col}] && reachable[Loc{row, colDown}] && !reachable[Loc{rowDown, colDown}] {
-			area.Sides++
-		}
-		if reachable[Loc{rowUp, col}] && reachable[Loc{row, colDown}] && !reachable[Loc{rowUp, colDown}] {
-			area.Sides++
-		}
-		if reachable[Loc{rowDown, col}] && reachable[Loc{row, colUp}] && !reachable[Loc{rowDown, colUp}] {
-			area.Sides++
-		}
-		if reachable[Loc{rowUp, col}] && reachable[Loc{row, colUp}] && !reachable[Loc{rowUp, colUp}] {
-			area.Sides++
+		for _, dir := range [][]int{{-1, -1}, {1, -1}, {-1, 1}, {1, 1}} {
+			rowDiff := row + dir[0]
+			colDiff := col + dir[1]
+
+			if !reachable[Loc{rowDiff, col}] && !reachable[Loc{row, colDiff}] {
+				area.Sides++
+			}
+
+			if reachable[Loc{rowDiff, col}] && reachable[Loc{row, colDiff}] && !reachable[Loc{rowDiff, colDiff}] {
+				area.Sides++
+			}
 		}
 	}
 
